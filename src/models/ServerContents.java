@@ -3,10 +3,10 @@ package models;
 import java.util.ArrayList;
 
 public class ServerContents {
-    private static ArrayList<Client> clients = new ArrayList<>();
+    private static ArrayList<ClientSecretary> clientSecretaries = new ArrayList<>();
 
-    public static void addClient(Client client) {
-        clients.add(client);
+    public static void addClient(ClientSecretary clientSecretary) {
+        clientSecretaries.add(clientSecretary);
     }
 
 

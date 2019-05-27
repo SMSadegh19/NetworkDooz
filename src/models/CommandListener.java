@@ -1,15 +1,17 @@
 package models;
 
 import com.gilecode.yagson.YaGson;
-import view.packets.CommandPacket;
+import view.packets.RequestPacket;
 
 import java.util.Scanner;
 
 public class CommandListener extends Thread {
     private Scanner scanner;
+    private ClientSecretary clientSecretary;
 
-    public CommandListener(Scanner scanner) {
+    public CommandListener(Scanner scanner, ClientSecretary clientSecretary) {
         this.scanner = scanner;
+        this.clientSecretary = clientSecretary;
     }
 
     @Override
@@ -20,16 +22,16 @@ public class CommandListener extends Thread {
     public void scanAndRunCommands() {
         while (scanner.hasNextLine()) {
             try {
-                String commandPacketJson = scanner.nextLine();
-                runCommand(commandPacketJson);
+                String requestPacketJson = scanner.nextLine();
+                runCommand(requestPacketJson);
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
             }
         }
     }
 
-    private void runCommand(String commandPacketJson) {
-        CommandPacket commandPacket = new YaGson().fromJson(commandPacketJson, CommandPacket.class);
-        commandPacket.doCommand();
+    private void runCommand(String requestPacketJson) {
+        RequestPacket requestPacket = new YaGson().fromJson(requestPacketJson, RequestPacket.class);
+        clientSecretary.respondToRequest(requestPacket);
     }
 }
