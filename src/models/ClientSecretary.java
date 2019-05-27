@@ -44,5 +44,11 @@ public class ClientSecretary {
         request.respondToRequest(this);
     }
 
+    public void updateClient(UpdatePacket updatePacket) {
+        String updatePacketJson = new YaGson().toJson(updatePacket);
+        printStream.println(updatePacketJson);
+        printStream.flush();
+    }
+
     // TODO: 5/27/19
 }
