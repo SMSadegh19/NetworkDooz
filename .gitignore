@@ -77,3 +77,10 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+/NetworkDooz.iml
+/.idea/compiler.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/description.html
+/.idea/encodings.xml
