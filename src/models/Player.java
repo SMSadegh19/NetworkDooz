@@ -11,5 +11,9 @@ public class Player {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     // TODO: 5/27/19
 }
