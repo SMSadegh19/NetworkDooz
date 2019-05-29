@@ -1,8 +1,8 @@
-package view.packets.requests;
+package packets.requests;
 
-import models.ClientSecretary;
+import server.ClientSecretary;
 import models.Player;
-import models.ServerContents;
+import server.ServerContents;
 
 public class CreatePlayerRequest extends Request {
     private String playerName;

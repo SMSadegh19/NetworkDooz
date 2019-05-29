@@ -1,6 +1,6 @@
-package view.packets;
+package packets;
 
-import view.packets.updates.Update;
+import packets.updates.Update;
 
 public class UpdatePacket {
     private Update update;

@@ -1,4 +1,4 @@
-package view.packets.requests;
+package packets.requests;
 
 public enum DataType {
     SCOREBOARD,

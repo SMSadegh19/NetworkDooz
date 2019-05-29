@@ -1,6 +1,6 @@
-package view.packets;
+package packets;
 
-import view.packets.requests.Request;
+import packets.requests.Request;
 
 public class RequestPacket {
     private Request request;

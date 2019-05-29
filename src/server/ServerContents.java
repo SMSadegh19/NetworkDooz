@@ -1,11 +1,13 @@
-package models;
+package server;
+
+import models.Player;
 
 import java.util.ArrayList;
 
 public class ServerContents {
     private static ArrayList<ClientSecretary> clientSecretaries = new ArrayList<>();
 
-    public static void addClient(ClientSecretary clientSecretary) {
+    public static void addClientSecretary(ClientSecretary clientSecretary) {
         clientSecretaries.add(clientSecretary);
     }
 

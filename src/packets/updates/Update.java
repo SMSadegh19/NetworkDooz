@@ -1,4 +1,4 @@
-package view.packets.updates;
+package packets.updates;
 
 public abstract class Update {
     public abstract void updateClient();

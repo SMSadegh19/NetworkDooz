@@ -1,5 +1,4 @@
-import models.ClientSecretary;
-import models.ServerContents;
+package server;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -13,8 +12,8 @@ public class DoozServer {
             System.out.println("Server is waiting for new client...");
             Socket socket = serverSocket.accept();
             ClientSecretary newClientSecretary = new ClientSecretary(socket);
-            ServerContents.addClient(newClientSecretary);
-            newClientSecretary.startWorking();
+            ServerContents.addClientSecretary(newClientSecretary);
+            newClientSecretary.startConnection();
         }
     }
 }

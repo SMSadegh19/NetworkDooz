@@ -1,9 +1,10 @@
-package models;
+package server;
 
 import com.gilecode.yagson.YaGson;
-import view.packets.RequestPacket;
-import view.packets.UpdatePacket;
-import view.packets.requests.Request;
+import packets.RequestPacket;
+import packets.UpdatePacket;
+import packets.requests.Request;
+import models.Player;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -20,9 +21,9 @@ public class ClientSecretary {
         this.printStream = new PrintStream(socket.getOutputStream());
     }
 
-    public void startWorking() throws IOException {
+    public void startConnection() throws IOException {
         Scanner scanner = new Scanner(socket.getInputStream());
-        CommandListener listenerThread = new CommandListener(scanner, this);
+        ServerListener listenerThread = new ServerListener(scanner, this);
         listenerThread.start();
     }
 

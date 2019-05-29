@@ -1,15 +1,15 @@
-package models;
+package server;
 
 import com.gilecode.yagson.YaGson;
-import view.packets.RequestPacket;
+import packets.RequestPacket;
 
 import java.util.Scanner;
 
-public class CommandListener extends Thread {
+public class ServerListener extends Thread {
     private Scanner scanner;
     private ClientSecretary clientSecretary;
 
-    public CommandListener(Scanner scanner, ClientSecretary clientSecretary) {
+    public ServerListener(Scanner scanner, ClientSecretary clientSecretary) {
         this.scanner = scanner;
         this.clientSecretary = clientSecretary;
     }
@@ -19,7 +19,7 @@ public class CommandListener extends Thread {
         scanAndRunCommands();
     }
 
-    public void scanAndRunCommands() {
+    private void scanAndRunCommands() {
         while (scanner.hasNextLine()) {
             try {
                 String requestPacketJson = scanner.nextLine();

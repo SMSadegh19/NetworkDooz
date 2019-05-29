@@ -1,6 +1,6 @@
-package view.packets.requests;
+package packets.requests;
 
-import models.ClientSecretary;
+import server.ClientSecretary;
 
 public class SendMessageRequest extends Request {
     private String message;

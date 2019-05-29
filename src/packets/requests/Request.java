@@ -1,6 +1,6 @@
-package view.packets.requests;
+package packets.requests;
 
-import models.ClientSecretary;
+import server.ClientSecretary;
 
 public abstract class Request {
     public abstract void respondToRequest(ClientSecretary requesterClientSecretary);
