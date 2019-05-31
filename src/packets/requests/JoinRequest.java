@@ -1,7 +1,7 @@
 package packets.requests;
 
 import packets.updates.ErrorUpdate;
-import packets.updates.PlayerLoginUpdate;
+import packets.updates.PlayerJoinUpdate;
 import packets.updates.Update;
 import server.ClientSecretary;
 import models.Player;
@@ -19,7 +19,7 @@ public class JoinRequest extends Request {
         if (ServerContents.findPlayer(playerName) == null) {
             requesterClientSecretary.setPlayer(new Player(playerName));
 
-            Update update = new PlayerLoginUpdate(playerName);
+            Update update = new PlayerJoinUpdate(playerName);
             requesterClientSecretary.updateClient(update);
             //Finished
             // todo JUST test it
