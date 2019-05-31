@@ -5,6 +5,7 @@ import packets.RequestPacket;
 import packets.UpdatePacket;
 import packets.requests.Request;
 import models.Player;
+import packets.updates.Update;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -45,7 +46,8 @@ public class ClientSecretary {
         request.respondToRequest(this);
     }
 
-    public void updateClient(UpdatePacket updatePacket) {
+    public void updateClient(Update update) {
+        UpdatePacket updatePacket = new UpdatePacket(update);
         String updatePacketJson = new YaGson().toJson(updatePacket);
         printStream.println(updatePacketJson);
         printStream.flush();
